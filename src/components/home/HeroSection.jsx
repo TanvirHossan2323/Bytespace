@@ -1,3 +1,4 @@
+import { publicPath, routePath } from '../../utils/publicPaths.js';
 import { Search, Star, Menu, X, ShoppingBag } from 'lucide-react';
 import { Logo, HeroBackgroundShapes } from '../branding/HomeBranding.jsx';
 import { learnerAvatars } from '../../data/homepage.js';
@@ -20,8 +21,8 @@ export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, sea
             </div>
 
             <div className="hidden md:flex items-center gap-7">
-              <a href="/login" className="text-white font-medium hover:text-brand-lime transition-colors">Sign In</a>
-              <a href="/signup" className="text-white font-medium hover:text-brand-lime transition-colors">Join Us</a>
+              <a href={routePath('/login')} className="text-white font-medium hover:text-brand-lime transition-colors">Sign In</a>
+              <a href={routePath('/signup')} className="text-white font-medium hover:text-brand-lime transition-colors">Join Us</a>
               <a href="#courses" aria-label="Browse courses" className="text-white transition-colors hover:text-brand-lime"><ShoppingBag size={23} strokeWidth={2} /></a>
             </div>
 
@@ -35,8 +36,8 @@ export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, sea
               <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
               <a href="#courses" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
               <a href="#paths" onClick={() => setIsMobileMenuOpen(false)}>Creators</a>
-              <a href="/login" onClick={() => setIsMobileMenuOpen(false)}>Sign In</a>
-              <a href="/signup" onClick={() => setIsMobileMenuOpen(false)}>Join Us</a>
+              <a href={routePath('/login')} onClick={() => setIsMobileMenuOpen(false)}>Sign In</a>
+              <a href={routePath('/signup')} onClick={() => setIsMobileMenuOpen(false)}>Join Us</a>
             </div>
           )}
         </nav>
@@ -74,7 +75,7 @@ export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, sea
 
             
             <img
-              src="/Image/29a52a24e51266edcd7d57d73392ee5fc4833220.png"
+              src={publicPath('Image/29a52a24e51266edcd7d57d73392ee5fc4833220.png')}
               alt="Student"
               className="relative z-10 h-[110%] w-[86%] max-w-[650px] object-contain object-bottom sm:h-[115%] md:h-[118%]"
             />

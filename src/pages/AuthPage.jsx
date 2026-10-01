@@ -1,19 +1,20 @@
+import { publicPath, routePath } from '../utils/publicPaths.js';
 import { useState } from 'react';
 import { Star } from 'lucide-react';
 
 const portraits = [
-  '/Image/0577f0e9b7fca2f32639871454da0de95f951709.png',
-  '/Image/b44979e1c98ecb3ec92ac86805fe55581fbeaa60.png',
-  '/Image/1e078348a54489bfd231d82fe1944770883c8d80.png',
-  '/Image/f3cf29a8fed39589ceb38423e65b26b8d6c93123.png',
-  '/Image/83fb3e04056cc892636460bee5791aa3f243854c.png',
-  '/Image/7fdccc783264eedc4fb989984eecbc4058a219f2.png',
-  '/Image/d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png'
+  publicPath('Image/0577f0e9b7fca2f32639871454da0de95f951709.png'),
+  publicPath('Image/b44979e1c98ecb3ec92ac86805fe55581fbeaa60.png'),
+  publicPath('Image/1e078348a54489bfd231d82fe1944770883c8d80.png'),
+  publicPath('Image/f3cf29a8fed39589ceb38423e65b26b8d6c93123.png'),
+  publicPath('Image/83fb3e04056cc892636460bee5791aa3f243854c.png'),
+  publicPath('Image/7fdccc783264eedc4fb989984eecbc4058a219f2.png'),
+  publicPath('Image/d0cd3adb501c64c1b4cf766de6abb9fe8925fb5f.png')
 ];
 
 function BrandMark() {
   return (
-    <a href="/" aria-label="Bytespace home" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-lime">
+    <a href={routePath('/')} aria-label="Bytespace home" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-lime">
       <svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2 2 7l10 5 10-5-10-5Zm-10 10 10 5 10-5M2 17l10 5 10-5" stroke="#164DF0" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
@@ -25,7 +26,7 @@ function MiniCourseCard({ back = false }) {
   return (
     <article className={`absolute overflow-hidden rounded-[26px] border border-gray-200 bg-white p-3 shadow-xl ${back ? 'left-0 top-[112px] z-0 w-[68%] sm:w-[64%]' : 'left-[18%] top-0 z-10 w-[80%] max-w-[470px]'}`}>
       <img
-        src={back ? '/Image/c88264191d691ba3300ad4f82a942429bb912fa5.jpg' : '/Image/4f3bdea5688b1a654db7a29b0bc5dd3563059d11.jpg'}
+        src={back ? publicPath('Image/c88264191d691ba3300ad4f82a942429bb912fa5.jpg') : publicPath('Image/4f3bdea5688b1a654db7a29b0bc5dd3563059d11.jpg')}
         alt={back ? 'Design asset course preview' : 'Data analytics dashboard course preview'}
         className={`w-full rounded-[18px] object-cover ${back ? 'h-[190px]' : 'h-[205px] sm:h-[245px]'}`}
       />
@@ -64,9 +65,9 @@ function AuthArtwork() {
     <div className="relative mt-12 h-[540px] w-full max-w-[720px] sm:mt-[76px] sm:h-[580px]">
       <MiniCourseCard back />
       <MiniCourseCard />
-      <img aria-hidden="true" src="/Image/8670b841eac7883ecb790f84eb349c6c01db588b.png" className="absolute left-[9%] top-[9%] z-20 h-28 w-28 rotate-[-16deg] object-contain shape-lime sm:h-32 sm:w-32" />
-      <img aria-hidden="true" src="/Image/e3b55902d605bfc37a0809e6dc6dfe61b6701897.png" className="absolute bottom-[14%] right-[2%] z-20 h-36 w-28 rotate-12 object-contain brightness-0 invert sm:h-44 sm:w-36" />
-      <img aria-hidden="true" src="/Image/f9c0e0fd05db48405aa72287b20d04b9a01feb51.png" className="absolute bottom-0 left-0 z-20 h-36 w-36 -rotate-[18deg] object-contain shape-lime sm:h-44 sm:w-44" />
+      <img aria-hidden="true" src={publicPath('Image/8670b841eac7883ecb790f84eb349c6c01db588b.png')} className="absolute left-[9%] top-[9%] z-20 h-28 w-28 rotate-[-16deg] object-contain shape-lime sm:h-32 sm:w-32" />
+      <img aria-hidden="true" src={publicPath('Image/e3b55902d605bfc37a0809e6dc6dfe61b6701897.png')} className="absolute bottom-[14%] right-[2%] z-20 h-36 w-28 rotate-12 object-contain brightness-0 invert sm:h-44 sm:w-36" />
+      <img aria-hidden="true" src={publicPath('Image/f9c0e0fd05db48405aa72287b20d04b9a01feb51.png')} className="absolute bottom-0 left-0 z-20 h-36 w-36 -rotate-[18deg] object-contain shape-lime sm:h-44 sm:w-44" />
       <div className="absolute bottom-0 left-[40%] z-20 w-[52%] max-w-[325px] rounded-[22px] bg-brand-lime p-4 shadow-xl sm:p-5">
         <div className="text-base font-semibold text-brand-dark sm:text-lg">Happy Students</div>
         <div className="flex items-center gap-1 text-xs text-gray-700">4.5 (240) <Star size={14} className="fill-brand-blue text-brand-blue" /></div>
@@ -155,7 +156,7 @@ export default function AuthPage({ mode }) {
 
           <p className="mt-auto pt-10 text-center text-sm text-gray-500 sm:text-base">
             {isSignup ? 'Already have an account?' : 'New user?'}{' '}
-            <a href={isSignup ? '/login' : '/signup'} className="font-medium text-brand-blue hover:underline">
+            <a href={routePath(isSignup ? '/login' : '/signup')} className="font-medium text-brand-blue hover:underline">
               {isSignup ? 'Login' : 'Create an account'}
             </a>
           </p>

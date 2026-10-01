@@ -1,3 +1,4 @@
+import { publicPath } from '../../utils/publicPaths.js';
 import { Star, CheckCircle2 } from 'lucide-react';
 import { learnerAvatars } from '../../data/homepage.js';
 
@@ -23,7 +24,7 @@ export default function CreatorToolsSection() {
               <svg className="absolute right-[10%] top-[25%] z-20 h-36 w-32 rotate-[-8deg] sm:right-[7%]" viewBox="0 0 120 140" fill="none" aria-hidden="true">
                 <path d="M28 13C80 4 100 20 43 35C-2 48 6 62 76 53C119 48 108 67 45 82C-7 94 4 109 81 98C122 92 107 113 49 126" stroke="#D4F000" strokeWidth="17" strokeLinecap="round" />
               </svg>
-              <img src="/Image/0d6596fb1df66aaf843ee85722f439fada233946.png" alt="Course creator with a tablet" className="relative z-10 h-[440px] w-[84%] object-contain object-bottom drop-shadow-2xl sm:h-[500px]" />
+              <img src={publicPath('Image/0d6596fb1df66aaf843ee85722f439fada233946.png')} alt="Course creator with a tablet" className="relative z-10 h-[440px] w-[84%] object-contain object-bottom drop-shadow-2xl sm:h-[500px]" />
               <div className="absolute bottom-[9%] right-0 z-20 w-[72%] rounded-[22px] bg-white p-4 shadow-xl sm:right-[-1%] sm:w-[68%] sm:p-5">
                 <div className="text-sm font-semibold text-[#25262a] sm:text-lg">Happy Students</div>
                 <div className="flex items-center gap-1 text-xs font-semibold text-gray-700">4.5 <span className="font-normal text-gray-400">(240)</span><Star size={14} className="fill-brand-lime text-brand-lime" /></div>
