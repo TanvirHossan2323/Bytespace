@@ -1,6 +1,7 @@
-import { publicPath, routePath } from '../utils/publicPaths.js';
+import { publicPath } from '../utils/publicPaths.js';
 import { useState } from 'react';
 import { Star } from 'lucide-react';
+import NavigationLink from '../components/NavigationLink.jsx';
 
 const portraits = [
   publicPath('Image/0577f0e9b7fca2f32639871454da0de95f951709.png'),
@@ -14,11 +15,11 @@ const portraits = [
 
 function BrandMark() {
   return (
-    <a href={routePath('/')} aria-label="Bytespace home" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-lime">
+    <NavigationLink to="/" aria-label="Bytespace home" className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-brand-lime">
       <svg width="23" height="23" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M12 2 2 7l10 5 10-5-10-5Zm-10 10 10 5 10-5M2 17l10 5 10-5" stroke="#164DF0" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
-    </a>
+    </NavigationLink>
   );
 }
 
@@ -156,9 +157,9 @@ export default function AuthPage({ mode }) {
 
           <p className="mt-auto pt-10 text-center text-sm text-gray-500 sm:text-base">
             {isSignup ? 'Already have an account?' : 'New user?'}{' '}
-            <a href={routePath(isSignup ? '/login' : '/signup')} className="font-medium text-brand-blue hover:underline">
+            <NavigationLink to={isSignup ? '/login' : '/signup'} className="font-medium text-brand-blue hover:underline">
               {isSignup ? 'Login' : 'Create an account'}
-            </a>
+            </NavigationLink>
           </p>
         </section>
       </div>

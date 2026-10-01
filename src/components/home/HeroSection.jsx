@@ -1,7 +1,8 @@
-import { publicPath, routePath } from '../../utils/publicPaths.js';
+import { publicPath } from '../../utils/publicPaths.js';
 import { Search, Star, Menu, X, ShoppingBag } from 'lucide-react';
 import { Logo, HeroBackgroundShapes } from '../branding/HomeBranding.jsx';
 import { learnerAvatars } from '../../data/homepage.js';
+import NavigationLink from '../NavigationLink.jsx';
 
 export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, searchQuery, setSearchQuery, setActiveCategory }) {
   return (
@@ -21,8 +22,8 @@ export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, sea
             </div>
 
             <div className="hidden md:flex items-center gap-7">
-              <a href={routePath('/login')} className="text-white font-medium hover:text-brand-lime transition-colors">Sign In</a>
-              <a href={routePath('/signup')} className="text-white font-medium hover:text-brand-lime transition-colors">Join Us</a>
+              <NavigationLink to="/login" className="text-white font-medium hover:text-brand-lime transition-colors">Sign In</NavigationLink>
+              <NavigationLink to="/signup" className="text-white font-medium hover:text-brand-lime transition-colors">Join Us</NavigationLink>
               <a href="#courses" aria-label="Browse courses" className="text-white transition-colors hover:text-brand-lime"><ShoppingBag size={23} strokeWidth={2} /></a>
             </div>
 
@@ -36,8 +37,8 @@ export default function HeroSection({ isMobileMenuOpen, setIsMobileMenuOpen, sea
               <a href="#home" onClick={() => setIsMobileMenuOpen(false)}>Home</a>
               <a href="#courses" onClick={() => setIsMobileMenuOpen(false)}>Courses</a>
               <a href="#paths" onClick={() => setIsMobileMenuOpen(false)}>Creators</a>
-              <a href={routePath('/login')} onClick={() => setIsMobileMenuOpen(false)}>Sign In</a>
-              <a href={routePath('/signup')} onClick={() => setIsMobileMenuOpen(false)}>Join Us</a>
+              <NavigationLink to="/login" onClick={() => setIsMobileMenuOpen(false)}>Sign In</NavigationLink>
+              <NavigationLink to="/signup" onClick={() => setIsMobileMenuOpen(false)}>Join Us</NavigationLink>
             </div>
           )}
         </nav>
