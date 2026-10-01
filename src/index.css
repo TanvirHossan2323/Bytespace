@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+@config "../tailwind.config.js";
+
+@layer base {
+  body {
+    @apply font-sans text-brand-dark bg-white antialiased;
+  }
+}
+
+@layer utilities {
+  .hero-grid {
+    background-image: var(--tw-gradient-stops);
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-grid {
+      background-size: 150px 150px;
+    }
+  }
+  
+  .glass-badge {
+    @apply bg-white/95 backdrop-blur-sm rounded-xl shadow-xl flex items-center p-3 gap-3;
+  }
+
+  .shape-lime {
+    filter: sepia(0.9) saturate(8) hue-rotate(38deg) brightness(1.35);
+  }
+
+  .mobile-menu {
+    display: grid;
+    gap: 0.25rem;
+  }
+
+  .mobile-menu a {
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    color: #111827;
+    font-weight: 700;
+    text-decoration: none;
+  }
+
+  .mobile-menu a:hover {
+    background: #f3f4f6;
+    color: #164df0;
+  }
+
+  .social-link {
+    display: grid;
+    width: 2.25rem;
+    height: 2.25rem;
+    place-items: center;
+    border: 1px solid #e5e7eb;
+    border-radius: 9999px;
+    font-size: 0.9rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
